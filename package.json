@@ -3,7 +3,7 @@
 	"displayName": "perf-heatmap",
 	"description": "Display code hot paths using the profile data",
 	"version": "0.0.1",
-	"publisher": "vscode-samples",
+	"publisher": "quasilyte",
 	"repository": "https://github.com/quasilyte/vscode-perf-heatmap",
 	"engines": {
 		"vscode": "^1.34.0"
@@ -34,9 +34,8 @@
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "npm run compile copyjs",
+		"vscode:prepublish": "npm run compile && cp src/main.js ./out && cp src/main.js.map ./out",
 		"compile": "tsc -p ./",
-		"copyjs": "cp src/main.js ./out && cp src/main.js.map ./out",
 		"lint": "eslint . --ext .ts,.tsx",
 		"watch": "tsc -watch -p ./"
 	},
